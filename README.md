@@ -14,7 +14,7 @@ $ apt upgrade
 $ apt install python
 $ pkg install python3
 $ apt install git
-$ git clone https://github.com/Aditmadzs/Selfbotpy3
+$ git clone https://github.com/adityawahyu0909/Selfbotpy3.git
 $ cd Selfbotpy3
 $ python -m pip install -r requirements.txt
 $ python3 Aditmadzs.py
