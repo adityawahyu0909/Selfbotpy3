@@ -129,7 +129,7 @@ def menuHelp():
 	else:
 		key = ''
 	menuHelp =	"╭━━━━━━━━━━━━━━━━━━━━━" + "\n" + \
-                "┃🇮🇩┃🇮🇩🇮🇩〔 Aditmadzs 〕🇮🇩🇮🇩" + "\n" + \
+                "┃🇮🇩┃🇮🇩🇮🇩〔 SUPRAPTO 〕🇮🇩🇮🇩" + "\n" + \
                 "┃🇮🇩┃" + "\n" + \
                 "┃🍁┃━━🍁〔 Help Message 〕🍁━━" + "\n" + \
                 "┃🍁┃━━━━━🍁〔 Menu 〕🍁━━━━━━" + "\n" + \
@@ -204,9 +204,9 @@ def menuHelp():
                 "┃✍️┃ " + key + "MimicList" + "\n" + \
                 "┃✍️┃ " + key + "MimicAdd @Mention" + "\n" + \
                 "┃✍️┃ " + key + "MimicDel @Mention" + "\n" + \
-                "┃✍️┃ " + key + "Mention" + "\n" + \
+                "┃✍️┃ " + key + "tagall" + "\n" + \
                 "┃✍️┃ " + key + "Lurking 「On/Off」" + "\n" + \
-                "┃✍️┃ " + key + "Lurking" + "\n" + \
+                "┃✍️┃ " + key + "cyduk" + "\n" + \
 				"┃📀┃━━━📀〔 Media Command 〕📀━━━" + "\n" + \
                 "┃📀┃ " + key + "InstaInfo 「Username」" + "\n" + \
                 "┃📀┃ " + key + "InstaStory 「Username」" + "\n" + \
@@ -217,7 +217,7 @@ def menuHelp():
                 "┃📀┃ " + key + "SearchYoutube 「Search」" + "\n" + \
 				"┃📀┃〔 muhmursalind 〕" + "\n" + \
 				"┃📀┃〔 Zero-Cool404 〕" + "\n" + \
-				"╰━━━〔 BIG BOS: ©Aditmadzs™  〕"
+				"╰━━━〔 BIG BOS: ©SUPRAPTO™  〕"
 	return menuHelp
 
 def menuTextToSpeech():
@@ -970,7 +970,7 @@ def clientBot(op):
 							client.sendMessage(to, "Berhasil broadcast ke {} group".format(str(len(groups))))
 
 
-						elif cmd == 'mentionall':
+						elif cmd == 'tagall':
 							group = client.getGroup(to)
 							midMembers = [contact.mid for contact in group.members]
 							midSelect = len(midMembers)//100
@@ -1037,7 +1037,7 @@ def clientBot(op):
 								except:
 									pass
 								client.sendMessage(to, "Delete reading point : \n{}".format(readTime))
-						elif cmd == "lurking":
+						elif cmd == "cyduk":
 							if to in read['readPoint']:
 								if read["readMember"][to] == []:
 									return client.sendMessage(to, "Tidak Ada Sider")
