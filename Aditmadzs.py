@@ -1278,7 +1278,7 @@ def clientBot(op):
 										url = urlList["href"]
 										result.append({"title": title, "url": url})
 								if len(cond) == 1:
-									ret_ = "╔══[ Musixmatch Result ]"
+									ret_ = "╔══[ Musicmatch Result ]"
 									num = 0
 									for title in result:
 										num += 1
