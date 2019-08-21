@@ -204,7 +204,7 @@ def menuHelp():
                 "┃✍️┃ " + key + "MimicList" + "\n" + \
                 "┃✍️┃ " + key + "MimicAdd @Mention" + "\n" + \
                 "┃✍️┃ " + key + "MimicDel @Mention" + "\n" + \
-                "┃✍️┃ " + key + "tagall" + "\n" + \
+                "┃✍️┃ " + key + "tag" + "\n" + \
                 "┃✍️┃ " + key + "Lurking 「On/Off」" + "\n" + \
                 "┃✍️┃ " + key + "cyduk" + "\n" + \
 				"┃📀┃━━━📀〔 Media Command 〕📀━━━" + "\n" + \
@@ -970,20 +970,23 @@ def clientBot(op):
 							client.sendMessage(to, "Berhasil broadcast ke {} group".format(str(len(groups))))
 
 
-						elif cmd == 'tagall':
-							group = client.getGroup(to)
-							midMembers = [contact.mid for contact in group.members]
-							midSelect = len(midMembers)//100
-							for mentionMembers in range(midSelect+1):
-								no = 0
-								ret_ = "╔══[ Mention Members ]"
-								dataMid = []
-								for dataMention in group.members[mentionMembers*100 : (mentionMembers+1)*100]:
-									dataMid.append(dataMention.mid)
-									no += 1
-									ret_ += "\n╠ {}. @!".format(str(no))
-								ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
-								client.sendMention(to, ret_, dataMid)
+						elif text.lower() == 'tag':
+                            if msg.toType == 0:
+                                sendMention(to, to, "", "")
+                            elif msg.toType == 2:
+                                group = cl.getGroup(to)
+                                midMembers = [contact.mid for contact in group.members]
+                                midSelect = len(midMembers)//20
+                                for mentionMembers in range(midSelect+1):
+                                    no = 0
+                                    ret_ = "╔══[ Mention Members ]"
+                                    dataMid = []
+                                    for dataMention in group.members[mentionMembers*20 : (mentionMembers+1)*20]:
+                                        dataMid.append(dataMention.mid)
+                                        no += 1
+                                        ret_ += "\n╠ {}. @!".format(str(no))
+                                    ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
+                                    cl.sendMention(msg.to, ret_, dataMid)
 						elif cmd == "lurking on":
 							tz = pytz.timezone("Asia/Makassar")
 							timeNow = datetime.now(tz=tz)
